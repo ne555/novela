@@ -1,10 +1,11 @@
 \ProvidesClass{novela}
-\LoadClass[oneside]{book}
+\LoadClass[9pt,oneside]{book}
 
 \RequirePackage[spanish]{babel}
 \RequirePackage[utf8]{inputenc}
 
-\RequirePackage[paperwidth=441pt,paperheight=666pt]{geometry}
+%\RequirePackage[paperwidth=441pt,paperheight=666pt]{geometry}
+\RequirePackage[top=15mm,bottom=15mm,left=10mm,right=10mm,paperwidth=116mm,paperheight=185mm]{geometry}
 
 \RequirePackage[T1]{fontenc}
 %\RequirePackage[scaled]{ulgothic}
@@ -32,12 +33,13 @@
 	\end{flushright}
 }
 
-%\RequirePackage{titlesec}
-%\titleformat{\chapter}[hang]
-%	{\normalfont}
-%	{}
-%	{20pt}
-%	{\bf \huge}
+\RequirePackage{titlesec}
+\titleformat{\chapter}[display]
+	{\bfseries \Large}
+	{Capítulo \thechapter}
+	{0pt}
+	{\bf \huge}
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
 
 \newcommand{\Fin}{
 	\begin{center}
