@@ -14,6 +14,9 @@
 \renewcommand{\baselinestretch}{1} %interlineado
 \setlength{\parskip}{0.5 \baselineskip} %espacio entre párrafos
 
+%evitar que se salga de margen
+\setlength{\emergencystretch}{2em}
+
 \RequirePackage{fancyhdr}
 \newcommand{\separate}{
 	\begin{center}
