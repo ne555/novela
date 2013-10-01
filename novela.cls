@@ -4,11 +4,9 @@
 \RequirePackage[spanish]{babel}
 \RequirePackage[utf8]{inputenc}
 
-%\RequirePackage[paperwidth=441pt,paperheight=666pt]{geometry}
 \RequirePackage[top=15mm,bottom=15mm,left=10mm,right=10mm,paperwidth=116mm,paperheight=185mm]{geometry}
 
 \RequirePackage[T1]{fontenc}
-%\RequirePackage[scaled]{ulgothic}
 \renewcommand*\familydefault{\sfdefault}
 
 \renewcommand{\baselinestretch}{1} %interlineado
