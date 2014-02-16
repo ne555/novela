@@ -3,6 +3,7 @@
 
 \RequirePackage[spanish]{babel}
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[bookmarks]{hyperref}
 
 \RequirePackage[top=15mm,bottom=15mm,left=10mm,right=10mm,paperwidth=116mm,paperheight=185mm]{geometry}
 
@@ -11,6 +12,9 @@
 
 \renewcommand{\baselinestretch}{1} %interlineado
 \setlength{\parskip}{0.5 \baselineskip} %espacio entre párrafos
+
+\widowpenalty 10000
+\clubpenalty 10000
 
 %evitar que se salga de margen
 \setlength{\emergencystretch}{2em}
