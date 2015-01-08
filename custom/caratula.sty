@@ -1,0 +1,27 @@
+\ProvidesPackage{caratula}
+
+\newlength{\drop} % generate specific amount of whitespace
+\drop=0.1\textheight
+
+\renewcommand{\maketitle}{
+	\makeatletter
+	\begin{titlepage}
+		\null \vfill
+		\begin{center}
+		{\fontfamily{phv}\selectfont%
+			{\bfseries\Huge{\@title}}
+			\vspace{\drop}
+
+			{\Large \textsc{\@author}}\par
+			\@date
+		}
+		\end{center}
+		\null \vfill
+		\begin{flushright}
+			\includegraphics[width=.1\textwidth]{logo}\\
+		\end{flushright}
+	\end{titlepage}
+	\makeatother
+}
+
+\endinput

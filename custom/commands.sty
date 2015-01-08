@@ -1,0 +1,61 @@
+\ProvidesPackage{commands}
+\RequirePackage{graphicx}
+\RequirePackage[export]{adjustbox}
+
+\newcommand{\separate}{
+	\begin{center}
+		\[\star \star \star\]
+	\end{center}
+}
+
+\newcommand{\epigraph}[2]{
+	\begin{flushright}
+		\parbox[c]{.7\textwidth}{
+			#1
+			\smallskip
+			\hrule
+		}
+	\end{flushright}
+}
+
+\newcommand{\Fin}{
+	\begin{center}
+		\large \sc Fin
+	\end{center}
+}
+
+\newcommand{\firma}[1]{
+	\par{\raggedleft \emph{#1}\par}
+}
+
+\newcommand{\Image}[1]{
+	\begin{center}
+		\includegraphics[max width=.9\textwidth, max height=.9\textheight, keepaspectratio]{#1}
+	\end{center}
+}
+
+\newcommand{\vcentrar}[1]{%
+	\null \vfill
+	#1
+	\null \vfill
+	\clearpage
+}
+
+\newcommand{\agradecimientos}[1]{
+	\vcentrar{
+	\begin{flushright}
+		\begin{minipage}{.6\linewidth}
+			#1
+		\end{minipage}
+	\end{flushright}
+	}
+}
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{0mm}
+%\addtolength{\wideitemsep}{-7pt}
+\let\olditem\item
+\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
+
+
+\endinput

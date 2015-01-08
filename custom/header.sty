@@ -1,0 +1,39 @@
+\ProvidesPackage{header}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+
+\DeclareOption{numtitle}{
+	\renewcommand{\chaptermark}[1]{%
+		\markboth{\thechapter. #1}{}%
+	}
+	\lhead{\leftmark}
+	\chead{}
+	\rhead{}
+}
+
+\DeclareOption{title}{
+	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+	\lhead{}
+	\chead{\leftmark}
+	\rhead{}
+}
+
+\DeclareOption{empty}{
+	\renewcommand{\chaptermark}[1]{%
+		\markboth{\@chapapp\ \thechapter}{}%
+	}
+	\lhead{\leftmark}
+	\chead{}
+	\rhead{}
+}
+
+
+\ExecuteOptions{empty}
+
+\ProcessOptions\relax
+
+\lfoot{}
+\rfoot{}
+\cfoot{}
+
+\endinput
