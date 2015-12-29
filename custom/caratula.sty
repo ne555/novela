@@ -3,6 +3,13 @@
 \newlength{\drop} % generate specific amount of whitespace
 \drop=0.1\textheight
 
+\newcommand{\subtitle}[1]{%
+	\newcommand{\thesubtitle}{#1}
+}
+\newcommand{\AnotherAuthor}[1]{%
+	\newcommand{\theAnotherAuthor}{#1}
+}
+
 \renewcommand{\maketitle}{%
 	\makeatletter
 	\begin{titlepage}
@@ -25,3 +32,10 @@
 }
 
 \endinput
+%\ifcsname theAnotherAuthor\endcsname
+%	\theAnotherAuthor
+%\fi
+%
+%\ifcsname thesubtitle\endcsname
+%	\thesubtitle
+%\fi

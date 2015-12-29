@@ -19,50 +19,6 @@
 }
 
 \ExecuteOptions{chapter}
-
 \ProcessOptions\relax
-
-\RequirePackage{titling}
-\pretitle{%
-	\null\vfill%
-	\begin{center}\Huge\sffamily\bfseries%
-}
-\posttitle{%
-	\par\end{center}%
-	\vskip .5em%
-}
-\newcommand{\subtitle}[1]{%
-	\posttitle{%
-		\end{center}%
-		\begin{center}%
-			\large\itshape\sffamily#1%
-		\par\end{center}%
-		\vskip .5em%
-	}
-}
-
-\preauthor{%
-	\begin{center}%
-		\large\textsc%
-}
-\postauthor{%
-	\end{center}%
-}
-
-\newcommand{\AnotherAuthor}[1]{%
-	\postauthor{%
-		\par\small\textsc{#1}%
-		\end{center}%
-	}
-}
-
-
-\renewcommand{\maketitlehookd}{%
-	\vfill%
-	\begin{center}%
-		\includegraphics[width=.10\textwidth]{logo}%
-	\end{center}%
-}
-
 
 \endinput

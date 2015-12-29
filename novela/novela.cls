@@ -37,6 +37,7 @@
 \RequirePackage{commands}
 \RequirePackage{header}
 \RequirePackage{titulo}
+\RequirePackage{caratula}
 
 \RequirePackage{fontenc}
 \RequirePackage{DejaVuSansMono}
