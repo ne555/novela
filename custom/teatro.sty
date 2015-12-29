@@ -1,0 +1,33 @@
+\newcommand{\repl}[1]{%
+	{\medskip \noindent \textsc{\small #1:}}\\
+}
+
+\newcommand{\paren}[1]{%
+	\emph{(#1)}
+}
+
+\parindent=0em
+
+\newcounter{act}
+\newcounter{scene}[act]
+
+\newcommand{\newact}{%
+	\refstepcounter{act}%
+	\newpage{\centering\bfseries\Huge--- Acto \Roman{act} ---\par}%
+	\vspace{1.5cm plus 0.5cm minus 0.5cm}%
+}
+
+\newcommand{\newscene}{%
+	\refstepcounter{scene}%
+	\bigskip%
+	{\centering\mdseries\Large Escena \arabic{scene}\par}%
+	\medskip%
+}
+
+\newcommand{\setting}[1]{%
+	%\newscene%
+	\begin{center}
+	{\normalsize\itshape\mdseries#1\par}%
+	\end{center}
+}
+
