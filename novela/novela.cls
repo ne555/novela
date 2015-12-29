@@ -2,28 +2,35 @@
 
 \ProvidesClass{novela}
 
-\DeclareOption{normal}{
+\DeclareOption{normal}{%
 	\PassOptionsToPackage{numtitle}{header}%
-	\PassOptionsToPackage{chapter}{titulo}
+	\PassOptionsToPackage{chapter}{titulo}%
+	\PassOptionsToPackage{normal}{ebook}
 }
 
-\DeclareOption{anthology}{
+\DeclareOption{anthology}{%
 	\PassOptionsToPackage{title}{header}%
 	\PassOptionsToPackage{titleonly}{titulo}
 }
 
-\DeclareOption{emptychapter}{
+\DeclareOption{emptychapter}{%
 	\PassOptionsToPackage{empty}{header}%
 	\PassOptionsToPackage{chapter}{titulo}
 }
 
+\DeclareOption{normal}{%
+	\PassOptionsToPackage{normal}{ebook}%
+}
+\DeclareOption{landscape}{%
+	\PassOptionsToPackage{landscape}{ebook}%
+}
 
 \ExecuteOptions{normal}
-
 \ProcessOptions\relax
 
 \LoadClass[12pt,oneside]{extbook}
 \RequirePackage[spanish]{babel}
+%\RequirePackage[shorthands=off,spanish]{babel} %"a "o "er no producen letras voladas
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{ebook}
 \RequirePackage{metadata}
@@ -32,9 +39,10 @@
 \RequirePackage{titulo}
 
 \RequirePackage{fontenc}
+\RequirePackage{DejaVuSansMono}
 \renewcommand{\rmdefault}{ppl}
 \renewcommand{\sfdefault}{phv}
-%\renewcommand*\familydefault{\sfdefault}
+%\renewcommand*\familydefault{\rmdefault}
 
 
 \renewcommand{\baselinestretch}{1} %interlineado
