@@ -1,16 +1,16 @@
 \ProvidesPackage{titulo}
 \RequirePackage{titlesec}
 
-\DeclareOption{chapter}{
+\DeclareOption{chapter}{%
 	\titleformat{\chapter}[display]
-		{\sf\Large}
+		{\sffamily\Large}
 		{\chaptertitlename\space\thechapter}
 		{0pt}
 		{\sffamily\bfseries\huge}
 	\titlespacing*{\chapter}{0pt}{0pt}{0pt}
 }
 
-\DeclareOption{titleonly}{
+\DeclareOption{titleonly}{%
 	\titleformat{\chapter}
 		{}
 		{}

@@ -2,15 +2,13 @@
 \RequirePackage{graphicx}
 \RequirePackage[export]{adjustbox}
 
-\newcommand{\separate}{
-	\begin{center}
-		\[\star \star \star\]
-	\end{center}
+\newcommand{\separate}{%
+	\[\star \star \star\]
 }
 
-\newcommand{\epigraph}[2]{
+\newcommand{\epigraph}[2]{%
 	\begin{flushright}
-		\parbox[c]{.7\textwidth}{
+		\parbox[c]{.7\textwidth}{%
 			#1
 			\smallskip
 			\hrule
@@ -18,20 +16,24 @@
 	\end{flushright}
 }
 
-\newcommand{\Fin}{
+\newcommand{\Fin}{%
 	\begin{center}
 		\large \sc Fin
 	\end{center}
 }
 
-\newcommand{\firma}[1]{
+\newcommand{\firma}[1]{%
 	\par{\raggedleft \emph{#1}\par}
 }
 
-\newcommand{\Image}[1]{
+\newcommand{\Image}[1]{%
 	\begin{center}
 		\includegraphics[max width=.9\textwidth, max height=.9\textheight, keepaspectratio]{#1}
 	\end{center}
+}
+
+\newcommand{\InsertImage}[1]{%
+	\includegraphics[max width=.9\textwidth, max height=.9\textheight, keepaspectratio]{#1}
 }
 
 \newcommand{\vcentrar}[1]{%
@@ -41,8 +43,8 @@
 	\clearpage
 }
 
-\newcommand{\agradecimientos}[1]{
-	\vcentrar{
+\newcommand{\agradecimientos}[1]{%
+	\vcentrar{%
 	\begin{flushright}
 		\begin{minipage}{.6\linewidth}
 			#1
@@ -50,6 +52,30 @@
 	\end{flushright}
 	}
 }
+
+\newcommand{\translation}[1]{%
+\footnote{#1 (N. del E.)}%
+}
+
+\newcommand{\translationmark}{%
+\footnotemark{}%
+}
+
+\newcommand{\translationtext}[1]{%
+	\footnotetext{#1 (N. del E.)}%
+}
+
+\newcommand{\Ord}[1]{%
+	\sptext{#1}%
+}
+\newcommand{\Romano}[1]{%
+	\MakeUppercase{\romannumeral #1}%
+}
+\newcommand{\romano}[1]{%
+	\romannumeral #1%
+}
+
+\newcommand{\grado}{$^\circ$}
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{0mm}
