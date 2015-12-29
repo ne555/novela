@@ -13,22 +13,37 @@
 \renewcommand{\maketitle}{%
 	\makeatletter
 	\begin{titlepage}
-		\null \vfill
-		\begin{center}
-		{\fontfamily{phv}\selectfont%
-			{\bfseries\Huge{\@title}}
-			\vspace{\drop}
-
-			{\Large \textsc{\@author}}\par
-			\@date
-		}
-		\end{center}
-		\null \vfill
-		\begin{flushright}
-			\includegraphics[width=.1\textwidth]{logo}\\
-		\end{flushright}
+		\titleWB
 	\end{titlepage}
 	\makeatother
+}
+
+\newcommand{\titleWB}{%
+	\null\vfill%
+	\begin{center}
+		\Huge\sffamily\bfseries\@title
+	\end{center}
+	\ifcsname thesubtitle\endcsname
+		\begin{center}%
+			\large\itshape\sffamily\thesubtitle
+		\end{center}%
+	\fi
+	\vskip 0.5em
+	\begin{center}%
+		\large\textsc%
+		\@author\par
+		\ifcsname theAnotherAuthor\endcsname
+			\small\textsc{\theAnotherAuthor}
+		\fi
+	\end{center}%
+
+	\begin{center}
+		\@date
+	\end{center}
+	\vfill
+	\begin{center}
+		\includegraphics[width=0.10\textwidth]{logo}\\
+	\end{center}
 }
 
 \endinput
