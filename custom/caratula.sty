@@ -10,15 +10,22 @@
 	\newcommand{\theAnotherAuthor}{#1}
 }
 
+\newcommand{\Publisher}{%
+	\includegraphics[width=0.15\textwidth]{logo}
+}
+
 \renewcommand{\maketitle}{%
 	\makeatletter
 	\begin{titlepage}
-		\titleWB
+		\titleHGP
 	\end{titlepage}
 	\makeatother
 }
 
-\newcommand{\titleWB}{%
+\newcommand*{\FSfont}[1]{}
+
+\newcommand*{\titleWB}{%
+	\drop = 0.05\textheight
 	\null\vfill%
 	\begin{center}
 		\Huge\sffamily\bfseries\@title
@@ -28,12 +35,13 @@
 			\large\itshape\sffamily\thesubtitle
 		\end{center}%
 	\fi
-	\vskip 0.5em
+	%\vskip 0.5em
+	\vspace*{\drop}
 	\begin{center}%
-		\large\textsc%
+		\large\sffamily\textsc%
 		\@author\par
 		\ifcsname theAnotherAuthor\endcsname
-			\small\textsc{\theAnotherAuthor}
+			\small\sffamily\textsc{\theAnotherAuthor}
 		\fi
 	\end{center}%
 
@@ -42,9 +50,55 @@
 	\end{center}
 	\vfill
 	\begin{center}
-		\includegraphics[width=0.10\textwidth]{logo}\\
+		\Publisher
 	\end{center}
 }
+
+\newcommand*{\titleS}{\begingroup% Scripts, T&H p 151
+	\drop = 0.1\textheight
+	\centering
+	\vspace*{\drop}
+	{\Huge\@title}\\[\baselineskip]
+	{\large\itshape\@author}\\[\baselineskip]
+	\vfill
+	\rule{0.4\textwidth}{0.4pt}\\[\baselineskip]
+	{\large\itshape \Publisher}\par
+	\vspace*{\drop}
+\endgroup}
+
+\newcommand*{\titleHGP}{\begingroup% Handy Guide to Papermaking
+	\drop=0.1\textheight
+	\begin{minipage}[t]{0.05\linewidth}
+		%\color{Red}
+		\rule{6pt}{\textheight}
+	\end{minipage}%
+	%\hspace{0.05\textwidth}
+	\begin{minipage}[b]{0.8\linewidth}
+		\vspace*{\drop}
+		{\Large \@author} \\
+		\rule{0.9\textwidth}{1pt} \par
+		\vspace{3\baselineskip}
+		{\noindent\Huge\bfseries \@title} \par
+		\vspace{2\baselineskip}
+		{\Large\itshape
+			\ifcsname thesubtitle\endcsname
+			\thesubtitle
+			\fi
+		} \par
+		\vspace{6.5\baselineskip}
+		\vspace{0.1\baselineskip}
+		{\Large
+			\ifcsname theAnotherAuthor\endcsname
+				\theAnotherAuthor
+			\fi
+		} \par
+		\vspace{\baselineskip}
+		\rule{0.9\textwidth}{1pt} \par
+		\vspace{\baselineskip}
+		{\Large \centerline{\Publisher}}
+	\end{minipage}
+	\hfill
+\endgroup}
 
 \endinput
 %\ifcsname theAnotherAuthor\endcsname
