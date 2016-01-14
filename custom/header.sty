@@ -4,7 +4,11 @@
 
 \DeclareOption{numtitle}{
 	\renewcommand{\chaptermark}[1]{%
-		\markboth{\thechapter. #1}{}%
+		\if@mainmatter
+			\markboth{\thechapter. #1}{}%
+		\else
+			\markboth{#1}{}%
+		\fi
 	}
 	\lhead{\leftmark}
 	\chead{}
@@ -20,7 +24,11 @@
 
 \DeclareOption{empty}{
 	\renewcommand{\chaptermark}[1]{%
-		\markboth{\@chapapp\ \thechapter}{}%
+		\if@mainmatter
+			\markboth{\@chapapp\ \thechapter}{}%
+		\else
+			\markboth{#1}{}%
+		\fi
 	}
 	\lhead{\leftmark}
 	\chead{}

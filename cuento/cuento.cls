@@ -3,4 +3,5 @@
 
 %tamaño papyre 602
 \LoadClass[emptychapter]{novela}
+\pagestyle{empty}
 \endinput

@@ -18,9 +18,6 @@
 	\PassOptionsToPackage{chapter}{titulo}
 }
 
-\DeclareOption{normal}{%
-	\PassOptionsToPackage{normal}{ebook}%
-}
 \DeclareOption{landscape}{%
 	\PassOptionsToPackage{landscape}{ebook}%
 }
@@ -38,6 +35,7 @@
 \RequirePackage{header}
 \RequirePackage{titulo}
 \RequirePackage{caratula}
+\RequirePackage{booktabs}
 
 \RequirePackage{fontenc}
 \RequirePackage{DejaVuSansMono}
