@@ -39,7 +39,7 @@
 \RequirePackage{booktabs}
 
 \RequirePackage{fontspec} %utf8
-\setmainfont{TeX Gyre Pagella} %palatino
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella} %palatino
 
 \renewcommand{\baselinestretch}{1} %interlineado
 %\setlength{\parskip}{0.5 \baselineskip} %espacio entre párrafos
