@@ -26,9 +26,10 @@
 \ProcessOptions\relax
 
 \LoadClass[12pt,oneside]{extbook}
-\RequirePackage[spanish]{babel}
-%\RequirePackage[shorthands=off,spanish]{babel} %"a "o "er no producen letras voladas
-\RequirePackage[utf8]{inputenc}
+
+\RequirePackage{polyglossia} %reemplaza a babel
+\setmainlanguage{spanish}
+
 \RequirePackage{ebook}
 \RequirePackage{metadata}
 \RequirePackage{commands}
@@ -37,12 +38,8 @@
 \RequirePackage{caratula}
 \RequirePackage{booktabs}
 
-\RequirePackage{fontenc}
-\RequirePackage{DejaVuSansMono}
-\renewcommand{\rmdefault}{ppl}
-\renewcommand{\sfdefault}{phv}
-%\renewcommand*\familydefault{\rmdefault}
-
+\RequirePackage{fontspec} %utf8
+\setmainfont{TeX Gyre Pagella} %palatino
 
 \renewcommand{\baselinestretch}{1} %interlineado
 %\setlength{\parskip}{0.5 \baselineskip} %espacio entre párrafos
