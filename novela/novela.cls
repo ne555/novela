@@ -40,6 +40,7 @@
 
 \RequirePackage{fontspec} %utf8
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella} %palatino
+\setsansfont[Ligatures=TeX]{Nimbus Sans Narrow} %reemplazo de helvética
 
 \renewcommand{\baselinestretch}{1} %interlineado
 %\setlength{\parskip}{0.5 \baselineskip} %espacio entre párrafos
