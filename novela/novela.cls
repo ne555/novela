@@ -22,6 +22,10 @@
 	\PassOptionsToPackage{landscape}{ebook}%
 }
 
+\DeclareOption{draft}{%
+	\PassOptionsToPackage{dodraft}{draft}%
+}
+
 \ExecuteOptions{normal}
 \ProcessOptions\relax
 
@@ -31,16 +35,18 @@
 \setmainlanguage{spanish}
 
 \RequirePackage{ebook}
+\RequirePackage{draft}
 \RequirePackage{metadata}
 \RequirePackage{commands}
 \RequirePackage{header}
 \RequirePackage{titulo}
 \RequirePackage{caratula}
 \RequirePackage{booktabs}
+\RequirePackage{comillas}
 
 \RequirePackage{fontspec} %utf8
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella} %palatino
-\setsansfont[Ligatures=TeX]{Helvetica World}
+\setsansfont[Ligatures=TeX]{Helvetica World} %helvetica
 
 \renewcommand{\baselinestretch}{1} %interlineado
 %\setlength{\parskip}{0.5 \baselineskip} %espacio entre párrafos
