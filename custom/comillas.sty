@@ -1,0 +1,44 @@
+\ProvidesPackage{comillas}
+
+
+	\newcounter{quotdepth}
+
+
+  \newenvironment{quoting}
+    {\leavevmode
+     \advance\quotdepth\@ne
+     \csname lquot\romannumeral\quotdepth\endcsname
+     \ifnum\quotdepth=\@ne
+       \let\quotpar\everypar
+       \let\everypar\quottoks
+       \everypar\expandafter{\the\quotpar}%
+       \quotpar{\the\everypar
+         \iflistquot\global\listquotfalse\else\quotcont\fi}%
+     \fi
+     \toks\expandafter{\quotcont}%
+     \edef\quotcont{%
+       \the\toks@
+       \expandafter\noexpand
+       \csname rquot\romannumeral\quotdepth\endcsname}}
+    {\csname rquot\romannumeral\quotdepth\endcsname}
+
+  \def\lquoti{\guillemotleft{}}
+  \def\rquoti{\guillemotright{}}
+  \def\lquotii{``}
+  \def\rquotii{''}
+  \def\lquotiii{`}
+  \def\rquotiii{'}
+
+	\newcommand{\Bc}{%
+		\addtocounter{quotdepth}{1}%
+		\csname lquot\romannumeral\thequotdepth\endcsname%
+		%ocupa varios párrafos
+		%\everypar=\expandafter{\the\everypar\csname rquot\romannumeral\thequotdepth\endcsname}%
+		%mejor ocupar quotation en esos casos
+	}
+	\newcommand{\Ec}{%
+		\csname rquot\romannumeral\thequotdepth\endcsname%
+		\addtocounter{quotdepth}{-1}%
+	}
+
+\endinput

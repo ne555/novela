@@ -1,0 +1,27 @@
+\ProvidesPackage{draft}
+%\RequirePackage{xcolor}
+
+
+\DeclareOption{dodraft}{
+	%search kaput to get the overboxes
+\def\ooops{\hbox to\wd0{\setbox0=\hbox to\wd0{\unhbox0}%
+\unhbox0 \ifnum\badness>10000 \rlap{\rule{.5em}{1ex}\tiny\quad kaput}\fi}}
+
+\interlinepenalty=-50000 % force the break between each two lines
+\maxdeadcycles=50        % allow upto 50 \outputs with no \shipout
+\newtoks\orioutput \orioutput=\output % wrap the original \output routine
+\output
+    {\ifnum\outputpenalty>-20000 \the\orioutput
+     \else \ifnum\outputpenalty<-\maxdimen \the\orioutput
+     \else
+     \unvbox255        % flush the entire list back
+     \setbox0=\lastbox % strip the very last box
+     \nointerlineskip  % avoid doubled interline glue
+     \ooops            % make the test and return the box back.
+     \advance\outputpenalty by50000
+     \penalty\outputpenalty % weak lie that nothing happened...
+     \fi\fi}
+}
+
+\ProcessOptions\relax
+\endinput
