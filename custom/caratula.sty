@@ -81,11 +81,13 @@
 	\resizebox*{.75\linewidth}{\baselineskip}{\rotlft{$>$}}%
 }
 \newcommand*{\titleBC}{\begingroup
-	\def\Title{\sffamily\textit{\Huge \@title}}
+	\def\Title{\sffamily\textit{\Huge \@title\endgraf}}
 	\settowidth{\unitlength}{\Title}
 	\begin{center}
-		\topb\\[\baselineskip]
-		\Title\\[.5\baselineskip]
+		\topb\par
+		\Title
+	\end{center}
+	\begin{center}
 		\ifcsname thesubtitle\endcsname
 		{\sffamily\LARGE\thesubtitle}\\
 		\fi
