@@ -3,7 +3,7 @@
 \RequirePackage[export]{adjustbox}
 
 \newcommand{\separate}{%
-	\[\star \star \star\]
+	\[\star \star \star\]\par
 }
 
 \newcommand{\epigraph}[2]{%
@@ -13,6 +13,27 @@
 			\smallskip
 			\hrule
 		}
+	\end{flushright}
+}
+
+\newcommand{\Epigrafe}[2]{%
+	%\begin{flushright}
+	%	\parbox[c]{.7\textwidth}{%
+	%		#1\par
+	%		%\smallskip
+	%		\hrule
+
+	%		\smallskip
+	%		\emph{#2}\par
+	%	}
+
+	%\end{flushright}
+	\begin{flushright}
+	\begin{minipage}{.7\linewidth}
+		#1\par
+		\smallskip\hrule\smallskip
+		\firma{#2}\par
+	\end{minipage}
 	\end{flushright}
 }
 
@@ -54,6 +75,14 @@
 	}
 }
 
+\newcommand{\Sinopsis}[1]{%
+	\clearpage
+	\thispagestyle{empty}
+	\null\vfill
+	#1
+	\clearpage
+}
+
 \newcommand{\translation}[1]{%
 \footnote{#1 (N. del E.)}%
 }
@@ -67,7 +96,7 @@
 }
 
 \newcommand{\Ord}[1]{%
-	\sptext{#1}%
+	\textsuperscript{#1}%
 }
 \newcommand{\Romano}[1]{%
 	\MakeUppercase{\romannumeral #1}%
