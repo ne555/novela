@@ -18,6 +18,20 @@
 		{\centering \sffamily\bfseries\huge}
 }
 
+\renewcommand{\thesection}{%
+\if@mainmatter
+	\thechapter.\arabic{section}%
+\else
+	\roman{section}%
+\fi
+}
+
+\titleformat{\section}
+	{\sffamily\bfseries\Large}
+	{\thesection}
+	{1ex}
+	{\sffamily\bfseries\Large}
+
 \ExecuteOptions{chapter}
 \ProcessOptions\relax
 
