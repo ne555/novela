@@ -1,8 +1,8 @@
 \ProvidesPackage{header}
 \RequirePackage{fancyhdr}
-\pagestyle{fancy}
 
-\DeclareOption{numtitle}{
+\DeclareOption{numtitle}{%
+	\pagestyle{fancy}
 	\renewcommand{\chaptermark}[1]{%
 		\if@mainmatter
 			\markboth{\thechapter. #1}{}%
@@ -15,7 +15,8 @@
 	\rhead{}
 }
 
-\DeclareOption{title}{
+\DeclareOption{title}{%
+	\pagestyle{fancy}
 	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 	\lhead{}
 	\chead{\leftmark}
@@ -36,12 +37,13 @@
 }
 
 
+\DeclareOption{printable}{%
+	\lfoot{}
+	\rfoot{}
+	\cfoot{\thepage}
+}
+
 \ExecuteOptions{empty}
-
 \ProcessOptions\relax
-
-\lfoot{}
-\rfoot{}
-\cfoot{}
 
 \endinput

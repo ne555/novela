@@ -26,6 +26,11 @@
 	\PassOptionsToPackage{dodraft}{draft}%
 }
 
+\DeclareOption{printable}{%
+	\PassOptionsToPackage{printable}{header}%
+	\PassOptionsToPackage{printable}{ebook}
+}
+
 \ExecuteOptions{normal}
 \ProcessOptions\relax
 
