@@ -41,6 +41,7 @@
 
 \RequirePackage{ebook}
 \RequirePackage{draft}
+\RequirePackage{verse}
 \RequirePackage{metadata}
 \RequirePackage{commands}
 \RequirePackage{header}
@@ -70,4 +71,6 @@
 \makeatother
 
 
+%sinc between viewer and editor
+\synctex=1
 \endinput
