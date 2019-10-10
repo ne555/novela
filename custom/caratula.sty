@@ -4,7 +4,12 @@
 \newlength{\drop} % generate specific amount of whitespace
 \drop=0.1\textheight
 
-\renewcommand{\and}{\qquad}
+%\renewcommand{\and}{\qquad}
+\def\and{%                  % \begin{tabular}
+  \end{tabular}%
+  \qquad
+  %\hskip 1em% \@plus.17fil%
+  \begin{tabular}[t]{c}}%   % \end{tabular}
 
 \newcommand{\SupraTitle}[1]{%
 	\newcommand{\theSupraTitle}{#1}
@@ -88,17 +93,17 @@
 	\resizebox*{.75\linewidth}{\baselineskip}{\rotlft{$>$}}%
 }
 \newcommand*{\titleBC}{\begingroup
-	\def\Title{\sffamily\textit{\Huge \@title\endgraf}}
+	\def\Title{\sffamily\bfseries{\Huge \@title\endgraf}}
 	\settowidth{\unitlength}{\Title}
 	\begin{center}
 		\ifcsname theSupraTitle\endcsname
-			{\sffamily\large\bfseries\theSupraTitle\par}
+			{\sffamily\large\bfseries{\theSupraTitle}\par}
 			\vspace*{1em}
 		\fi
 		\topb\par
 		\Title
 		\ifcsname thesubtitle\endcsname
-		\vspace*{1em}{\sffamily\LARGE\thesubtitle\endgraf}
+		\vspace*{1em}{\sffamily\Large\bfseries{\thesubtitle}\endgraf}
 		\fi
 		\botb
 	\end{center}
@@ -107,13 +112,17 @@
 	\fi
 	\vfill
 	\begin{center}
-		{\LARGE\textbf{\@author\endgraf}}
+		{\LARGE\sffamily\bfseries{%
+			\begin{tabular}[t]{c}
+			\@author
+			\end{tabular}}%
+			\endgraf}
 		\ifcsname theAnotherAuthor\endcsname
 		\vspace{\baselineskip}
-		{\large\theAnotherAuthor}
+		{\large\sffamily\bfseries\theAnotherAuthor}
 		\fi
 
-		\@date
+		{\large\sffamily\@date}
 		\vfill
 		\Publisher
 		%\plogo\\[0.5\baselineskip]
