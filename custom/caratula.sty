@@ -1,7 +1,14 @@
 \ProvidesPackage{caratula}
+\RequirePackage{graphicx}
 
 \newlength{\drop} % generate specific amount of whitespace
 \drop=0.1\textheight
+
+\renewcommand{\and}{\qquad}
+
+\newcommand{\SupraTitle}[1]{%
+	\newcommand{\theSupraTitle}{#1}
+}
 
 \newcommand{\subtitle}[1]{%
 	\newcommand{\thesubtitle}{#1}
@@ -84,6 +91,10 @@
 	\def\Title{\sffamily\textit{\Huge \@title\endgraf}}
 	\settowidth{\unitlength}{\Title}
 	\begin{center}
+		\ifcsname theSupraTitle\endcsname
+			{\sffamily\large\bfseries\theSupraTitle\par}
+			\vspace*{1em}
+		\fi
 		\topb\par
 		\Title
 		\ifcsname thesubtitle\endcsname
@@ -96,8 +107,9 @@
 	\fi
 	\vfill
 	\begin{center}
-		{\LARGE\textbf{\@author}}\\[\baselineskip]
+		{\LARGE\textbf{\@author\endgraf}}
 		\ifcsname theAnotherAuthor\endcsname
+		\vspace{\baselineskip}
 		{\large\theAnotherAuthor}
 		\fi
 
