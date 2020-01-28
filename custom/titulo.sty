@@ -16,6 +16,20 @@
 		{}
 		{0pt}
 		{\centering \sffamily\bfseries\huge}
+	\renewcommand{\thesection}{%
+	\if@mainmatter
+		\arabic{section}%
+	\else
+		\roman{section}%
+	\fi
+	}
+	\renewcommand{\thesubsection}{%
+	\if@mainmatter
+		\Roman{subsection}%
+	\else
+		\roman{section}.\Roman{subsection}%
+	\fi
+	}
 }
 
 \renewcommand{\thesection}{%
@@ -31,6 +45,12 @@
 	{\thesection}
 	{1ex}
 	{\sffamily\bfseries\Large}
+
+\titleformat{\part}[display]
+	{\centering \sffamily\bfseries\huge}
+	{Parte\space\Roman{part}}
+	{0pt}
+	{\centering \sffamily\bfseries\Huge}
 
 \ExecuteOptions{chapter}
 \ProcessOptions\relax
