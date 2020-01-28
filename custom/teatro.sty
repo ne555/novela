@@ -1,9 +1,13 @@
+\newcommand{\Char}[1]{%
+	\textsc{#1}%
+}
+
 \newcommand{\repl}[1]{%
 	{\medskip \noindent \textsc{\small #1:}}\\
 }
 
 \newcommand{\paren}[1]{%
-	\emph{(#1)}
+	\emph{(#1)}%
 }
 
 \parindent=0em
@@ -22,6 +26,13 @@
 	\bigskip%
 	{\centering\mdseries\Large Escena \arabic{scene}\par}%
 	\medskip%
+}
+
+\newcommand{\Acto}{%
+	\newact
+	\phantomsection
+	\chaptermark{---\Roman{act}---}
+	\addcontentsline{toc}{chapter}{\Roman{act}}
 }
 
 \newcommand{\setting}[1]{%
