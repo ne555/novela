@@ -40,17 +40,30 @@
 \fi
 }
 
-\titleformat{\section}
-	{\sffamily\bfseries\Large}
-	{\thesection}
-	{1ex}
-	{\sffamily\bfseries\Large}
-
 \titleformat{\part}[display]
 	{\centering \sffamily\bfseries\huge}
 	{Parte\space\Roman{part}}
 	{0pt}
-	{\centering \sffamily\bfseries\Huge}
+	{\Huge}
+
+\titleformat{\section}
+	{\sffamily\bfseries\Large}
+	{\thesection}
+	{1ex}
+	{}
+
+
+\titleformat{\subsection}
+	{\sffamily\bfseries\large}
+	{\thesubsection}
+	{1ex}
+	{}
+
+\titleformat{\subsubsection}
+	{\sffamily\bfseries}
+	{}
+	{0pt}
+	{}
 
 \ExecuteOptions{chapter}
 \ProcessOptions\relax
